@@ -21,3 +21,8 @@ if ($_GET['Command'] == "chk_sess") {
     $ResponseXML .= "</salesdetails>";
     echo $ResponseXML;
 }
+
+
+
+
+// amt
