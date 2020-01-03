@@ -131,7 +131,7 @@
 
                         $sql = "select *,SUM(mileage) as MIL,SUM(damount) as DS,SUM(camount) as CS,SUM(amount) as FA from trip where date between '" . $FROM . "' and '" . $TO . "' group by vehicle_ref order by date";
 
-
+// echo $sql;
 
                     $CON_mileage = 0.00;
                     $CON_D_AMOUNT = 0.00;

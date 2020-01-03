@@ -52,11 +52,11 @@ include_once './connection_sql.php';
                 </tr>
                 <?php
                 if ($stname == "gcode") {
-                    $sql = "SELECT * from expense where entry_type = 'G'";
+                    $sql = "SELECT * from expense where entry_type = 'G' order by expense_ref desc";
                 } 
                 
                 if ($stname == "vcode") {
-                    $sql = "SELECT * from view_exp_vehicle where entry_type = 'V'";
+                    $sql = "SELECT * from expense where entry_type = 'V' order by expense_ref desc";
                 }
 
                 $stname = "";

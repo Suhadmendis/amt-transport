@@ -58,7 +58,7 @@ include_once './connection_sql.php';
                 $sql = "select * from view_search_fuel";
 
 
-                $sql = $sql . " order by fuel_ref";
+                $sql = $sql . " order by fuel_ref desc";
 
                 $stname = "";
                 if (isset($_GET['stname'])) {

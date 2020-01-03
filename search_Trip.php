@@ -60,7 +60,7 @@ include_once './connection_sql.php';
                 $sql = "SELECT * from trip";
 
 
-                $sql = $sql . " order by trip_ref";
+                $sql = $sql . " order by trip_ref desc";
 
                 $stname = "";
                 if (isset($_GET['stname'])) {

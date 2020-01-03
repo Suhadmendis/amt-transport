@@ -61,7 +61,7 @@ include_once './connection_sql.php';
                 $sql = "SELECT * from advance";
 
 
-                $sql = $sql . " order by od_ref";
+                $sql = $sql . " order by od_ref desc";
 
                 $stname = "";
                 if (isset($_GET['stname'])) {
