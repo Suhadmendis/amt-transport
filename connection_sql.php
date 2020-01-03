@@ -12,6 +12,13 @@ $port = 10060;
 $dbname = 'amttran1_amt';
 
 
+// $servername = 'localhost';
+// $username = 'amttran1';
+// $password = 'pY8v4R5[8pXk!V';
+// $port = 10060;
+// $dbname = 'amttran1_amt';
+
+
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 
