@@ -63,9 +63,16 @@ include_once './connection_sql.php';
 
                 foreach ($conn->query($sql) as $row) {
                     $cuscode = $row['od_ref'];
+
+                     $sqld = "SELECT * FROM driver_master_file where driver_ref = '" . $row['driver_ref'] . "'";
+                     $resultd = $conn->query($sqld);
+                     $rowd = $resultd->fetch();
+   
+
+      
                     echo "<tr>                
                               <td onclick=\"custno('$cuscode');\">" . $row['od_ref'] . "</a></td>
-                              <td onclick=\"custno('$cuscode');\">" . $row['driver_ref'] . "</a></td>
+                              <td onclick=\"custno('$cuscode');\">" . $rowd['driver_name'] . "</a></td>
                               <td onclick=\"custno('$cuscode');\">" . $row['date'] . "</a></td>
                              </tr>";
                 }
