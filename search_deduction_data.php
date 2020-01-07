@@ -18,7 +18,7 @@ if ($_GET["Command"] == "pass_quot") {
     $cuscode = $_GET["custno"];
 
 
-    $sql = "Select * from view_driver_deduct where od_ref ='" . $cuscode . "'";
+    $sql = "Select * from deduction where od_ref ='" . $cuscode . "'";
 
 
     $sql = $conn->query($sql);
@@ -28,7 +28,13 @@ if ($_GET["Command"] == "pass_quot") {
         $ResponseXML .= "<str_customername1><![CDATA[" . $row['date'] . "]]></str_customername1>";
         $ResponseXML .= "<str_customername2><![CDATA[" . $row['driver_ref'] . "]]></str_customername2>";
         $ResponseXML .= "<str_customername3><![CDATA[" . $row['amount'] . "]]></str_customername3>";
-        $ResponseXML .= "<str_customername4><![CDATA[" . $row['driver_name'] . "]]></str_customername4>";
+
+  $sqld = "SELECT * FROM driver_master_file where driver_ref = '" . $row['driver_ref'] . "'";
+    $resultd = $conn->query($sqld);
+    $rowd = $resultd->fetch();
+   
+
+        $ResponseXML .= "<str_customername4><![CDATA[" . $rowd['driver_name'] . "]]></str_customername4>";
         
     }
     $ResponseXML .= "</salesdetails>";

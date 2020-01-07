@@ -97,12 +97,15 @@ function passcusresult_quot()
         XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("str_customername2");
         opener.document.form1.driver_ref.value = XMLAddress1[0].childNodes[0].nodeValue;
        
-        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("str_customername4");
+        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("str_customername3");
         opener.document.form1.amount.value = XMLAddress1[0].childNodes[0].nodeValue;
+        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("str_customername4");
+        opener.document.form1.driver_name.value = XMLAddress1[0].childNodes[0].nodeValue;
+
 //       alert(name);
         
-        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("dpt_name");
-        opener.document.form1.driver_name.value = XMLAddress1[0].childNodes[0].nodeValue;
+        // XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("dpt_name");
+        // opener.document.form1.driver_name.value = XMLAddress1[0].childNodes[0].nodeValue;
 
        self.close();
     }

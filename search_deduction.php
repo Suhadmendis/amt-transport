@@ -51,7 +51,7 @@ include_once './connection_sql.php';
                    <th>Date</th>
                 </tr>
                 <?php
-                $sql = "SELECT * from view_driver_deduct";
+                $sql = "SELECT * from deduction";
 
 
                 $sql = $sql . " order by od_ref limit 50";
@@ -65,7 +65,7 @@ include_once './connection_sql.php';
                     $cuscode = $row['od_ref'];
                     echo "<tr>                
                               <td onclick=\"custno('$cuscode');\">" . $row['od_ref'] . "</a></td>
-                              <td onclick=\"custno('$cuscode');\">" . $row['driver_name'] . "</a></td>
+                              <td onclick=\"custno('$cuscode');\">" . $row['driver_ref'] . "</a></td>
                               <td onclick=\"custno('$cuscode');\">" . $row['date'] . "</a></td>
                              </tr>";
                 }
