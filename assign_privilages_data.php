@@ -41,6 +41,7 @@ if ($_GET["Command"] == "select_permission") {
     </tr>";
 
     $sql1 = "Select * from doc order by docid";
+    // echo $sql1;
     $result1 = mysqli_query($GLOBALS['dbinv'], $sql1);
     while ($row1 = mysqli_fetch_array($result1)) {
         $chkview = "chkview" . $i;
@@ -50,7 +51,7 @@ if ($_GET["Command"] == "select_permission") {
         
 
         $sql = "Select * from userpermission   where username='" . trim($_GET["user_name"]) . "' and docid=" . $row1["docid"] . "";
-         
+        
         $result = mysqli_query($GLOBALS['dbinv'], $sql);
         if ($row = mysqli_fetch_array($result)) {
             $ResponseXML .= "	<tr>

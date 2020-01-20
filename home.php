@@ -135,6 +135,9 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "lorry_summary") {
         include_once './lorry_summary.php';
     }
+     if ($_GET['url'] == "lorry_summary_2") {
+        include_once './lorry_summary_2.php';
+    }
 
 
 
