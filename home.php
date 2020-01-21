@@ -51,6 +51,15 @@ if (isset($_GET['url'])) {
         include_once './od.php';
     }
 
+    if ($_GET['url'] == "cash_flow") {
+        include_once './cash_flow.php';
+    }
+    
+    if ($_GET['url'] == "payment") {
+        include_once './payment.php';
+    }
+
+
     if ($_GET['url'] == "loan") {
         include_once './loan.php';
     }
