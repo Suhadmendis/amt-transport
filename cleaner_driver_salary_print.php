@@ -123,6 +123,7 @@
                     <th>From</th>
                     <th>To</th>
                     <th>Salary</th>
+                    <th>Trip Amount</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -153,6 +154,7 @@
                                     <td>" . $row['to_loc'] . "</td>
                                    
                                     <td style= 'text-align: right;'>" . number_format($row['damount'],2) . "</td>
+                                    <td style= 'text-align: right;'>" . number_format($row['amount'],2) . "</td>
                                   </tr>
                                   <tr>";
 
