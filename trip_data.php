@@ -52,6 +52,12 @@ if ($_GET["Command"] == "save_item") {
                         ('" . $_GET['trip_ref'] . "','" . $_GET['vehicle_ref'] . "','" . $_GET['date'] . "','" . $_GET['opening_km'] . "','" . $_GET['closing_km'] . "','" . $_GET['mileage'] . "','" . $_GET['driver_ref'] . "','" . $_GET['cleaner_ref'] . "','" . $_GET['remark'] . "','" . $_GET['user'] . "','" . $_GET['amount'] . "','" . $_GET['damount'] . "','" . $_GET['camount'] ."','" . $_GET['item_ref'] ."','" . $_GET['item_name'] . "','" . $_GET['department'] . "','" . $_GET['run_no'] . "','" . $_GET['from_loc'] . "','" . $_GET['to_loc'] . "','" . $_GET['daypay'] . "')";
 
             $result = $conn->query($sql1);
+
+             $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
+                        ('" . $_GET['trip_ref'] . "','" . $_GET['date'] . "','TRIP','" . $_GET['driver_ref'] . "','slot1','" . $_GET['remark'] . "','" . $_GET['amount'] . "','IN','" . $_SESSION["CURRENT_USER"] . "')";
+        $result = $conn->query($sql1);
+
+
       // echo $sql1;
 
         $sql = "SELECT trip_ref FROM invpara";

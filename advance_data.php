@@ -52,6 +52,11 @@ if ($_GET["Command"] == "save_item") {
                         ('" . $_GET['od_ref'] . "','" . $_GET['date'] . "','" . $_GET['driver_ref'] . "','" . $_GET['amount'] . "','" . $_GET['user'] ."')";
         $result = $conn->query($sql1);
         // echo $sql1;
+        
+
+         $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
+                        ('" . $_GET['od_ref'] . "','" . $_GET['date'] . "','ADV','" . $_GET['driver_ref'] . "','slot1','No Remark','" . $_GET['amount'] . "','OUT','" . $_SESSION["CURRENT_USER"] . "')";
+        $result = $conn->query($sql1);
 
         $sql = "SELECT advance_code FROM invpara";
         $result = $conn->query($sql);

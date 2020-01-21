@@ -52,6 +52,22 @@ if ($_GET["Command"] == "save_item") {
     $sql1 = "Insert into expense(expense_ref,expense_category,amount,remark,vehicle_ref,date,entry_type)values 
                         ('" . $_GET['expense_ref'] . "','" . $_GET['expense_category'] ."','" . $_GET['amount'] ."','" . $_GET['remark'] ."','" . $_GET['vehicle_ref'] ."','" . $_GET['date'] ."','" . $_GET['entry_type'] ."')";
         $result = $conn->query($sql1);
+
+        if ($_GET['entry_type'] == "V") {
+            $type = "VEXP";
+            $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
+                        ('" . $_GET['expense_ref'] . "','" . $_GET['date'] . "','" . $type . "','" . $_GET['vehicle_ref'] . "','slot2','" . $_GET['remark'] ."','" . $_GET['amount'] . "','OUT','" . $_SESSION["CURRENT_USER"] . "')";
+            $result = $conn->query($sql1);   
+        }
+
+        if ($_GET['entry_type'] == "G") {
+            $type = "GEXP";
+            $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
+                        ('" . $_GET['expense_ref'] . "','" . $_GET['date'] . "','" . $type . "','" . $_GET['vehicle_ref'] . "','slot2','" . $_GET['remark'] ."','" . $_GET['amount'] . "','OUT','" . $_SESSION["CURRENT_USER"] . "')";
+            $result = $conn->query($sql1);   
+        }
+
+         
        
 
         $sql = "SELECT expense FROM invpara";

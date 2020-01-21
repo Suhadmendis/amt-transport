@@ -54,6 +54,9 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "cash_flow") {
         include_once './cash_flow.php';
     }
+    if ($_GET['url'] == "fuel_usage") {
+        include_once './fuel_usage.php';
+    }
     
     if ($_GET['url'] == "payment") {
         include_once './payment.php';
@@ -115,6 +118,7 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "fuel_usage") {
         include_once './fuel_usage.php';
     }
+
 
     if ($_GET['url'] == "fau") {
         include_once './list_all_fuel.php';

@@ -52,6 +52,13 @@ if ($_GET["Command"] == "save_item") {
     $sql1 = "Insert into fuel(fuel_ref,vehicle_ref,date,rate,ltrs,amount,voucher_no)values 
                         ('" . $_GET['fuel_ref'] . "','" . $_GET['vehicle_ref'] . "','" . $_GET['date'] . "','" . $_GET['rate'] . "','" . $_GET['ltrs'] . "','" . $_GET['amount'] ."','" . $_GET['voucher_no'] ."')";
         $result = $conn->query($sql1);
+
+
+         $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
+                        ('" . $_GET['fuel_ref'] . "','" . $_GET['date'] . "','FUL','" . $_GET['vehicle_ref'] . "','slot2','No Remark','" . $_GET['amount'] . "','OUT','" . $_SESSION["CURRENT_USER"] . "')";
+        $result = $conn->query($sql1);
+
+
 //        echo $sql;
 
         $sql = "SELECT fuel FROM invpara";
