@@ -213,6 +213,7 @@
 
                                   <td colspan='7' style= 'text-align: right;'><b>Driver Net Salary</b></td>
                                   <td style= 'text-align: right;'><b>" . number_format($sal_tot,2) . "<b></td>
+                                  <td style= 'text-align: right;'><b>" . number_format($TOT,2) . "<b></td>
                                   </tr>";
 
                                   $TOTAL_SALARAY = $sal_tot;
@@ -232,7 +233,7 @@
                                   echo "<tr>
                                     <td colspan='7' style= 'text-align: right;'><b>Cleaner Net Salary</b></td>
                                     <td style= 'text-align: right;'><b>" . number_format($sal_tot_C,2) . "<b></td>
-                                    <td style= 'text-align: right;'><b>" . number_format($TOT,2) . "<b></td>
+                                    
                                   </tr>
                                   <tr>";
 
