@@ -46,11 +46,7 @@ include_once './connection_sql.php';
         </table>    
         <div id="filt_table" class="CSSTableGenerator">  <table width="735"   class="table table-bordered">
                 <?php
-                echo "<tr>
-                    <th>Expense Ref.</th>
-                    <th>Expense Category</th>
-                    <th>Amount</th>
-                </tr>";
+              
                 if ($stname == "gcode") {
                     $sql = "SELECT * from expense where entry_type = 'G' order by expense_ref desc";
                 } 
@@ -82,10 +78,17 @@ include_once './connection_sql.php';
                     } 
                     
                     if ($stname == "vcode") {
+
+                         $sqlv = "Select vehicle_number from vehicle_master1 where vehicle_ref = '".$row['vehicle_ref']."'";
+                            $resultv = $conn->query($sqlv);
+                            $rowv= $resultv->fetch();
+                           
+
+
                         echo "<tr>                
                               <td onclick=\"custno('$cuscode','$stname');\">" . $row['expense_ref'] . "</a></td>
                               <td onclick=\"custno('$cuscode','$stname');\">" . $row['expense_category'] . "</a></td>
-                              <td onclick=\"custno('$cuscode','$stname');\">" . $row['vehicle_ref'] . "</a></td>
+                              <td onclick=\"custno('$cuscode','$stname');\">" . $rowv['vehicle_number'] . "</a></td>
                               <td onclick=\"custno('$cuscode','$stname');\">" . $row['amount'] . "</a></td>
                              </tr>";
                     }
