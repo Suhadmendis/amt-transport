@@ -122,8 +122,8 @@
                     <th>Run Number</th>
                     <th>From</th>
                     <th>To</th>
-                    <th>Driver Salary</th>
                     <th>Cleaner Salary</th>
+                    <th>Driver Salary</th>
                     <th>Salary</th>
                     <th>Trip Amount</th>
 
