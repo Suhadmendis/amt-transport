@@ -74,7 +74,7 @@
                                 <option value="Stationary">Stationary</option>
                                 <option value="Staff mobile bill">Staff mobile bill</option>
                                 <option value="Staff salary">Staff salary</option>
-
+                                <option value="Office Expenses">Office Expenses</option>
                             </select>
 
                         </div>
