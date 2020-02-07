@@ -83,8 +83,8 @@
                                 <option value="Service">Service</option>
                                 <option value="Add Component">Add Component</option>
                                 <option value="Licensing and Insurance">Licensing and Insurance</option>
-                                <option value="Tire">Add Component</option>
-                                <option value="Battery">Add Component</option>
+                                <option value="Tire">Tire</option>
+                                <option value="Battery">Battery</option>
                                 <option value="Other">Other</option>
 
                             </select>
