@@ -107,23 +107,35 @@
               <table class='table table-bordered' style='font-size: 14px;'>
                 <thead class='thead-dark'>
                   <tr>
-                    
                     <th>Lorry No</th>
-                    
                     <th>Mileage</th>
-
-                    
                     <th>Driver Salary</th>
                     <th>Cleaner Salary</th>
-                    <th>Vehicle Expenses</th>
-                    <th>Fuel</th>
+                    <th>Rapair</th>
+                    <th>Service</th>
+                    <th>Add Component</th>
+                    <th>Licensing and Insurance</th>
+                    <th>Tire</th>
+                    <th>Battery</th>
+                    <th>Other</th>
 
+                    <th>Fuel</th>
                     <th>Total Amount</th>
-                    
                     <th>Trip Amount</th>
                     <th>Balance</th>
                     
-                   </tr>
+            
+
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+
+
+
                 </thead>
                 <tbody>";
 
@@ -192,11 +204,37 @@
                                     $rowveh = $result->fetch();
                                     $no = $rowveh['vehicle_number'];
 
-
-
-                                    $sqlex = "select SUM(amount) as EXAMO from expense where vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Rapair' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
                                     $result = $conn->query($sqlex);
-                                    $rowex = $result->fetch();
+                                    $rowex1 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Service' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex2 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Add Component' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex3 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Licensing and Insurance' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex4 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Tire' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex5 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Battery' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex6 = $result->fetch();
+
+                                    $sqlex = "select SUM(amount) as EXAMO from expense where expense_category = 'Other' and vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
+                                    $result = $conn->query($sqlex);
+                                    $rowex7 = $result->fetch();
+
+
+
+
 
                                     $sqlfu = "select SUM(amount) as FUAMO from fuel where vehicle_ref ='" . $row['vehicle_ref'] . "' and date between '" . $FROM . "' and '" . $TO . "'";
                                     $result = $conn->query($sqlfu);
@@ -208,7 +246,18 @@
                                        
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($row['DS'],2) . "</td>";
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($row['CS'],2) . "</td>";
-                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex['EXAMO'],2) . "</td>";
+                                        
+
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex1['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex2['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex3['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex4['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex5['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex6['EXAMO'],2) . "</td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowex7['EXAMO'],2) . "</td>";
+
+
+
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowfu['FUAMO'],2) . "</td>";
                                         $TOT_AMOUNT = $row['DS']+$row['CS']+$rowex['EXAMO']+$rowfu['FUAMO'];
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>(" . number_format($TOT_AMOUNT,2) . ")</td>";

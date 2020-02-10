@@ -108,6 +108,19 @@
                 <thead class='thead-dark'>
                   <tr>
                     
+                    <th rowspan=2>Lorry No</th>
+                    <th>Mileage</th>
+                    <th>Driver Salary</th>
+                    <th>Cleaner Salary</th>
+                    <th>Vehicle Expenses</th>
+                    <th>Fuel</th>
+                    <th>Total Amount</th>
+                    <th>Trip Amount</th>
+                    <th>Balance</th>
+                    
+                   </tr>
+                   <tr>
+                    
                     <th>Lorry No</th>
                     <th>Mileage</th>
                     <th>Driver Salary</th>
