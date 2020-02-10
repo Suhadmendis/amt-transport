@@ -148,7 +148,15 @@
                     $CON_mileage = 0.00;
                     $CON_D_AMOUNT = 0.00;
                     $CON_C_AMOUNT = 0.00;
-                    $CON_VE = 0.00;
+                    
+                    $CON_VE1 = 0.00;
+                    $CON_VE2 = 0.00;
+                    $CON_VE3 = 0.00;
+                    $CON_VE4 = 0.00;
+                    $CON_VE5 = 0.00;
+                    $CON_VE6 = 0.00;
+                    $CON_VE7 = 0.00;
+                    
                     $CON_FU = 0.00;
                     $CON_TOT_AMO = 0.00;
                     $CON_TRIP = 0.00;
@@ -259,7 +267,7 @@
 
 
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>" . number_format($rowfu['FUAMO'],2) . "</td>";
-                                        $TOT_AMOUNT = $row['DS']+$row['CS']+$rowex['EXAMO']+$rowfu['FUAMO'];
+                                        $TOT_AMOUNT = $row['DS']+$row['CS']+$rowex1['EXAMO']+$rowex2['EXAMO']+$rowex3['EXAMO']+$rowex4['EXAMO']+$rowex5['EXAMO']+$rowex6['EXAMO']+$rowex7['EXAMO']+$rowfu['FUAMO'];
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>(" . number_format($TOT_AMOUNT,2) . ")</td>";
 
                                         echo "<td style='text-align: right;background-color: #91ffff;'>" . number_format($row['FA'],2) . "</td>";
@@ -278,7 +286,20 @@
                                         $CON_mileage = $CON_mileage + $row['MIL'];
                                         $CON_D_AMOUNT = $CON_D_AMOUNT + $row['DS'];
                                         $CON_C_AMOUNT = $CON_C_AMOUNT + $row['CS'];
-                                        $CON_VE = $CON_VE + $rowex['EXAMO'];
+
+
+
+                                        $CON_VE1 = $CON_VE1 + $rowex1['EXAMO'];
+                                        $CON_VE2 = $CON_VE2 + $rowex2['EXAMO'];
+                                        $CON_VE3 = $CON_VE3 + $rowex3['EXAMO'];
+                                        $CON_VE4 = $CON_VE4 + $rowex4['EXAMO'];
+                                        $CON_VE5 = $CON_VE5 + $rowex5['EXAMO'];
+                                        $CON_VE6 = $CON_VE6 + $rowex6['EXAMO'];
+                                        $CON_VE7 = $CON_VE7 + $rowex7['EXAMO'];
+
+
+
+
                                         $CON_FU = $CON_FU + $rowfu['FUAMO'];
                                         $CON_TOT_AMO = $CON_TOT_AMO + $TOT_AMOUNT;
                                         $CON_TRIP = $CON_TRIP + $row['FA'];
@@ -289,10 +310,17 @@
                                         echo "<tr>";
                                         echo "<td ></b></td>";
                                         
-                                        echo "<td><b>" . number_format($CON_mileage,2) . "</b></td>";
+                                        echo "<td><b>" . $CON_mileage . "</b></td>";
                                         echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_D_AMOUNT,2) . "</b></td>";
                                         echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_C_AMOUNT,2) . "</b></td>";
-                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE1,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE2,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE3,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE4,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE5,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE6,2) . "</b></td>";
+                                        echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_VE7,2) . "</b></td>";
+
                                         echo "<td style='text-align: right;background-color: antiquewhite;'><b>" . number_format($CON_FU,2) . "</b></td>";
                                         echo "<td style='text-align: right;background-color: antiquewhite;'><b>(" . number_format($CON_TOT_AMO,2) . ")</b></td>";
                                         echo "<td style='text-align: right;background-color: #91ffff;'><b>" . number_format($CON_TRIP,2) . "</b></td>";
