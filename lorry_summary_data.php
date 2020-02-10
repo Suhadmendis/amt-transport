@@ -271,7 +271,7 @@
                                         echo "<td style='text-align: right;background-color: antiquewhite;'>(" . number_format($TOT_AMOUNT,2) . ")</td>";
 
                                         echo "<td style='text-align: right;background-color: #91ffff;'>" . number_format($row['FA'],2) . "</td>";
-                                        echo "<td style='text-align: right;background-color: #91ffff;'>(" . number_format($row['FA']-$TOT_AMOUNT,2) . ")</td>";
+                                        echo "<td style='text-align: right;background-color: #91ffff;'>" . number_format($row['FA']-$TOT_AMOUNT,2) . "</td>";
                                         // echo "<td style='text-align: right;background-color: antiquewhite;'>(" . number_format($amo_DE,2) . ")</td>";
 
                                         // if ($NET_SAL < 0) {
