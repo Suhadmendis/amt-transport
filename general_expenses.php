@@ -75,6 +75,13 @@
                                 <option value="Staff mobile bill">Staff mobile bill</option>
                                 <option value="Staff salary">Staff salary</option>
                                 <option value="Office Expenses">Office Expenses</option>
+
+                                <option value="Office Expenses">Tea</option>
+                                <option value="Office Expenses">Over Time</option>
+                                <option value="Office Expenses">Staff Pass</option>
+                                <option value="Office Expenses">Staff Vehicle</option>
+                                <option value="Office Expenses">Others</option>
+                                 
                             </select>
 
                         </div>
