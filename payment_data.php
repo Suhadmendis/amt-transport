@@ -44,15 +44,15 @@ if ($_GET["Command"] == "save_item") {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->beginTransaction();
 
-            //$sql = "delete from trip where trip_ref = '" . $_GET['trip_ref'] . "'";
-        
-        // $result = $conn->query($sql);
+            $sql = "delete from pay where od_ref = '" . $_GET['od_ref'] . "'";
+            $result = $conn->query($sql);
                                     // $end_month = date('Y-m-d', strtotime("+{$_GET['monthes']} months", strtotime("NOW")));
         $sql1 = "Insert into pay(od_ref,date,driver_ref,amount,user)values  
                         ('" . $_GET['od_ref'] . "','" . $_GET['date'] . "','" . $_GET['driver_ref'] . "','" . $_GET['amount'] . "','" . $_GET['user'] ."')";
         $result = $conn->query($sql1);
 
-
+            $sql = "delete from cash_flow where REF = '" . $_GET['od_ref'] . "'";
+            $result = $conn->query($sql);
 
         $sql1 = "Insert into cash_flow(REF, SDATE, TYPE, SLOT1, SLOT2, remark, amount, FLOW, user)values  
                         ('" . $_GET['od_ref'] . "','" . $_GET['date'] . "','PAY','" . $_GET['driver_ref'] . "','slot1','No Remark','" . $_GET['amount'] . "','OUT','" . $_SESSION["CURRENT_USER"] . "')";
