@@ -65,7 +65,7 @@ function custno(code)
     var url = "search_Trip_data.php";
     url = url + "?Command=" + "pass_quot";
     url = url + "&custno=" + code;
-alert(url);
+// alert(url);
     xmlHttp.onreadystatechange = passcusresult_quot;
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
