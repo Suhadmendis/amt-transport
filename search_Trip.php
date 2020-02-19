@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include_once './connection_sql.php';
@@ -14,23 +13,7 @@ include_once './connection_sql.php';
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-
-            <link rel="stylesheet" href="css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-
-
-            <!-- <script language="JavaScript" src="js/search_joborder.js"></script> -->
-
-            <script language="JavaScript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-            <script language="JavaScript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-            <script language="JavaScript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-            <script language="JavaScript" src="js/search_advance.js"></script>
+            <script language="JavaScript" src="js/search_trip.js"></script>
 
 
 
@@ -56,11 +39,16 @@ include_once './connection_sql.php';
                     $stname = $_GET["stname"];
                 }
                 ?>
-             
+                <td width="24" ><input type="text" size="20" name="cusno" id="cusno" value=""  class="form-control" tabindex="1" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <td width="24" ><input type="text" size="70" id="customername1" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <td width="24" ><input type="text" size="70" id="customername2" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <td width="24" ><input type="text" size="70" id="customername3" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <td width="24" ><input type="text" size="70" id="customername4" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <td width="24" ><input type="text" size="70" id="customername5" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>
+                <!--<td width="24" ><input type="text" size="70" name="customername" id="customername" value=""  class="form-control" onkeyup="<?php echo "update_cust_list('$stname')"; ?>"/></td>-->
         </table>    
-          <div id="filt_table" class="CSSTableGenerator container"> 
-           <table id='example'  class='table table-bordered'>
-               <thead> <tr>
+        <div id="filt_table" class="CSSTableGenerator">  <table width="735"   class="table table-bordered">
+                <tr>
                    <th>Trip Ref.</th>
                     <th>Vehicle Ref</th>
                     <th>Vehicle Number</th>
@@ -68,8 +56,8 @@ include_once './connection_sql.php';
                     <th>Driver Name</th>
                     <th>From</th>
                     <th>To</th>
-                </tr></thead><tbody>
-                 <?php
+                </tr>
+                <?php
                 
                 $sql = "SELECT * from trip";
                 $sql = $sql . " order by trip_ref desc";
@@ -104,14 +92,8 @@ include_once './connection_sql.php';
                 ?>
             </table>
         </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#example').dataTable( {
-          "pageLength": 17
-        } );
-    } );
 
-</script>
     </body>
 </html>
+
 
