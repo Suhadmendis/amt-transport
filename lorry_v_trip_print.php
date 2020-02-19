@@ -88,13 +88,14 @@
     $TO = $_GET['to_txt'];
 
 
-    $VEHICLE = $_GET['vehicle_ref'];
    
- 
 
         $DC = "Driver";
 
-
+ $sqlV = "SELECT * FROM vehicle_master1 where vehicle_ref = '" . $_GET['vehicle_ref'] . "'";
+                                    $resultV = $conn->query($sqlV);
+                                    $rowV = $resultV->fetch();
+                                    $VEHICLE = $rowV['vehicle_number'];
 
         echo "<div id='main-table' class='container'>
               <h4>  Number : $VEHICLE</h4>
@@ -109,7 +110,6 @@
                     <th>Run Number</th>
                     <th>From</th>
                     <th>To</th>
-                    <th>Cleaner</th>
                     <th>Driver</th>
                     <th>Trip Amount</th>
 
@@ -118,6 +118,7 @@
                   </tr>
                 </thead>
                 <tbody>";
+    $VEHICLE = $_GET['vehicle_ref'];
 
 
 
@@ -137,6 +138,11 @@
                                     $rowD = $resultD->fetch();
                                     $DRIVER_NAME = $rowD['driver_name'];
 
+                                    $sqlC = "SELECT * FROM cleaner_master where cleaner_ref = '" . $row['cleaner_ref'] . "'";
+                                    $resultC = $conn->query($sqlC);
+                                    $rowC = $resultC->fetch();
+                                    $DRIVER_NAME = $rowC['cleaner_name'];
+
 
                              echo "<tr>
                                     <td>" . $row['trip_ref'] . "</td>
@@ -144,9 +150,7 @@
                                     <td>" . $row['run_no'] . "</td>
                                     <td>" . $row['from_loc'] . "</td>
                                     <td>" . $row['to_loc'] . "</td>
-                                   
-                                    <td style= 'text-align: right;'>" . $row['cleaner_ref'] . "</td>
-                                    <td style= 'text-align: right;'>" . $row['driver_ref'] . "</td>
+                                    <td style= 'text-align: right;'>" . $DRIVER_NAME . "</td>
                                     <td style= 'text-align: right;'>" . number_format($row['amount'],2) . "</td>
                                   </tr>
                                   <tr>";
@@ -158,7 +162,7 @@
 
                                  
                                   echo "<tr>
-                                  <td colspan='7' style= 'text-align: right;'><b>Total</b></td>
+                                  <td colspan='6' style= 'text-align: right;'><b>Total</b></td>
                                   <td style= 'text-align: right;'><b>" . number_format($TOT,2) . "<b></td>
                                   </tr>
                                   <tr>";
