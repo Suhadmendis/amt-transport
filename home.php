@@ -104,6 +104,15 @@ if (isset($_GET['url'])) {
     // }
 //ojidhusfigyi
 
+    if ($_GET['url'] == "lorry_v_trip") {
+        include_once './lorry_v_trip.php';
+    }
+
+
+
+
+
+
     if ($_GET['url'] == "driver_salary_summary") {
         include_once './driver_salary_summary.php';
     }
