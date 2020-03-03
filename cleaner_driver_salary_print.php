@@ -120,6 +120,7 @@
                     <th>Trip Ref</th>
                     <th>Date</th>
                     <th>Run Number</th>
+                    <th>Vehicle Number</th>
                     <th>From</th>
                     <th>To</th>
                     <th>Cleaner Salary</th>
@@ -150,11 +151,17 @@
                                     $rowD = $resultD->fetch();
                                     $DRIVER_NAME = $rowD['driver_name'];
 
+                                     $sqlV = "SELECT * FROM vehicle_master1 where vehicle_ref = '" . $row['vehicle_ref'] . "'";
+                                    $resultV = $conn->query($sqlV);
+                                    $rowV = $resultV->fetch();
+                                    $VEHICLE = $rowV['vehicle_number'];
+
 
                              echo "<tr>
                                     <td>" . $row['trip_ref'] . "</td>
                                     <td>" . $row['date'] . "</td>
                                     <td>" . $row['run_no'] . "</td>
+                                    <td>" . $VEHICLE . "</td>
                                     <td>" . $row['from_loc'] . "</td>
                                     <td>" . $row['to_loc'] . "</td>
                                    
@@ -164,7 +171,9 @@
                                     <td style= 'text-align: right;'>" . number_format($row['amount'],2) . "</td>
                                   </tr>
                                   <tr>";
+
                                   $TOT = $TOT + $row['amount'];
+
                             $sal_tot = $sal_tot + $row['damount'];
 
                             if ($CURRENT_DATE != $row['date']) {
