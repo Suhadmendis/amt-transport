@@ -151,7 +151,7 @@
                                     $rowD = $resultD->fetch();
                                     $DRIVER_NAME = $rowD['driver_name'];
 
-                                     $sqlV = "SELECT * FROM vehicle_master1 where vehicle_ref = '" . $row['vehicle_ref'] . "'";
+                                    $sqlV = "SELECT * FROM vehicle_master1 where vehicle_ref = '" . $row['vehicle_ref'] . "'";
                                     $resultV = $conn->query($sqlV);
                                     $rowV = $resultV->fetch();
                                     $VEHICLE = $rowV['vehicle_number'];
@@ -219,8 +219,7 @@
 
 
                             echo "<tr>
-
-                                  <td colspan='7' style= 'text-align: right;'><b>Driver Net Salary</b></td>
+                                  <td colspan='8' style= 'text-align: right;'><b>Driver Net Salary</b></td>
                                   <td style= 'text-align: right;'><b>" . number_format($sal_tot,2) . "<b></td>
                                   <td style= 'text-align: right;'><b>" . number_format($TOT,2) . "<b></td>
                                   </tr>";
@@ -240,7 +239,7 @@
 
 
                                   echo "<tr>
-                                    <td colspan='7' style= 'text-align: right;'><b>Cleaner Net Salary</b></td>
+                                    <td colspan='8' style= 'text-align: right;'><b>Cleaner Net Salary</b></td>
                                     <td style= 'text-align: right;'><b>" . number_format($sal_tot_C,2) . "<b></td>
                                     
                                   </tr>
@@ -252,19 +251,19 @@
                                   // $BS = 13900 / 26;
                                   // $BS = $BS * $DAY_COUNT;
                                   // echo "<tr>
-                                  // <td colspan='7' style= 'text-align: right;'><b>Basic Salary</b></td>
+                                  // <td colspan='8' style= 'text-align: right;'><b>Basic Salary</b></td>
                                   // <td style= 'text-align: right;'><b>" . number_format($BS,2) . "<b></td>
                                   // </tr>";
 
                                   echo "<tr>
-                                  <td colspan='7' style= 'text-align: right;'><b>Deduction</b></td>
+                                  <td colspan='8' style= 'text-align: right;'><b>Deduction</b></td>
                                   <td style= 'text-align: right;'><b>(" . number_format($DEDUCTION,2) . ")<b></td>
                                   </tr>";
 
                                   $TOTAL_SALARAY = $TOTAL_SALARAY - $DEDUCTION;
 
                                   echo "<tr>
-                                  <td colspan='7' style= 'text-align: right;'><b>Loan</b></td>
+                                  <td colspan='8' style= 'text-align: right;'><b>Loan</b></td>
                                   <td style= 'text-align: right;'><b>(" . number_format($LOAN,2) . ")<b></td>
                                   </tr>";
 
@@ -279,12 +278,12 @@
                                   // $EPF = $E_TEMP*8;
 
                                   // echo "<tr>
-                                  // <td colspan='7' style= 'text-align: right;'><b>EPF</b></td>
+                                  // <td colspan='8' style= 'text-align: right;'><b>EPF</b></td>
                                   // <td style= 'text-align: right;'><b>(" . number_format($EPF,2) . ")<b></td>
                                   // </tr>";
 
                                    echo "<tr>
-                                  <td colspan='7' style= 'text-align: right;'><b>Advance</b></td>
+                                  <td colspan='8' style= 'text-align: right;'><b>Advance</b></td>
                                   <td style= 'text-align: right;'><b>(" . number_format($ADVANCE,2) . ")<b></td>
                                   </tr>";
 
@@ -294,7 +293,7 @@
 
                                  
                                   echo "<tr>
-                                  <td colspan='7' style= 'text-align: right;'><b>Total Salary</b></td>
+                                  <td colspan='8' style= 'text-align: right;'><b>Total Salary</b></td>
                                   <td style= 'text-align: right;'><b>" . number_format($TOTAL_SALARAY,2) . "<b></td>
                                   </tr>
                                   <tr>";
